@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid info">
+  <div class="row justify-content-center info-name">
+    <h2>Lichess Game Predictor</h2>
+  </div>
+  <div class="row justify-content-center info-desc">
+    <h2>Predict the win probability of your games</h2>
+  </div>
+</div>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  <div class="container-fluid form-container">
+    <div class="row justify-content-center" id="usernames-label">
+      <label>Usernames</label>
+    </div>
+    <div class="row justify-content-center" id="usernames-input">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-flex justify-content-center">
+        {{ form.white(placeholder="White Username") }}
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-flex justify-content-center">
+        {{ form.black(placeholder="Black Username") }}
+      </div>
+    </div>
+    <div class="row justify-content-center" id="eval-label">
+      {{form.evaluation.label()}}
+    </div>
+    <div class="row justify-content-center" id="eval-input">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 d-flex justify-content-center">
+        {{ form.evaluation(placeholder="Ex: -9.7, #1") }}
+      </div>
+    </div>
+    <div class="row justify-content-center" id="clocks-label">
+      <label>Player Clocks</label>
+    </div>
+    <div class="row justify-content-center" id="clocks-input">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-flex justify-content-center">
+        {{ form.white_clock(placeholder="White Clock") }}
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 d-flex justify-content-center">
+        {{ form.black_clock(placeholder="Black Clock") }}
+      </div>
+    </div>
+    <div class="row justify-content-center" id="perf-label">
+      {{ form.perf.label() }}
+    </div>
+    <div class="row justify-content-center" id="perf-input">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 d-flex justify-content-center">
+        {{ form.perf }}
+      </div>
+    </div>
+    <div class="row justify-content-center" id="submit-input">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 d-flex justify-content-center">
+        {{ form.submit }}
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

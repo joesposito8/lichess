@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 d-flex justify-content-center" id="results-usernames">
+      <a>{{ white_info['username'] }}</a>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 d-flex justify-content-center" id="results-usernames">
+      <a>{{ black_info['username'] }}</a>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 d-flex justify-content-center" id="results-probs">
+      {% if white_prob > black_prob %}
+        <a style="color:#11822f;">{{white_prob}}</a>
+      {% elif white_prob < black_prob %}
+        <a style="color:#750d06;">{{white_prob}}</a>
+      {% else %}
+        <a style="color:black;">{{white_prob}}</a>
+      {% endif %}
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 d-flex justify-content-center" id="results-probs">
+      {% if white_prob < black_prob %}
+        <a style="color:#11822f;">{{black_prob}}</a>
+      {% elif white_prob > black_prob %}
+        <a style="color:#750d06;">{{black_prob}}</a>
+      {% else %}
+        <a style="color:black;">{{black_prob}}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
