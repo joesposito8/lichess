@@ -4,3 +4,4 @@ plan.txt
 /app/.flaskenv
 /app/.env
 /app-main
+/app
