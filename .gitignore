@@ -1,3 +1,6 @@
 plan.txt
 /data
 /models
+/app/.flaskenv
+/app/.env
+/app-main
