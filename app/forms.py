@@ -15,7 +15,7 @@ session = OAuth2Session(client_id)
 client = berserk.Client(session)
 
 def validate_username(form, field):
-    if client.users.get_by_id('ussssssadsadsdasdsssssss') == []:
+    if client.users.get_by_id(field.data) == []:
         raise ValidationError("Invalid input syntax")
 
 class UsernameForm(FlaskForm):
